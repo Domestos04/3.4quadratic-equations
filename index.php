@@ -1,17 +1,27 @@
 <?php
 // a*x2 + b*x +c = 0
-$x = rand(-10, 10);
-$a = rand(-10, 10);
-$b = rand(-10, 10);
-$c = rand(-10, 10);
+$a = (rand(-10, 10));
+$b = (rand(-10, 10));
+$c = (rand(-10, 10));
+echo ($a . "X^2 +".$b ."x + ".$c . " = 0");
+$d = ($b*$b -4*$a*$c) . "<br>";
 
-if ($x != 0){
+if ($d > 0){
     // if($x != 0){
-    $x = $b * $b - 4 * $a * $c;
-    echo "<span style = \" color: BlueViolet;\">Квадратне рівняня:</span>". $x. " ";  
+    $D = sqrt($b*$b-4*$a*$c);
+    $x1 = ((-$b - $D)/2*$a);
+    $x2 = ((-$b + $D)/2*$a);
+    echo ("  x1 = ".$x1);
+    echo ("  x2 = ".$x2);
+      
 // }
-}else {
-    echo "Помилка";
+}elseif ($d == 0){
+    $x = ((-$b)/2*$a);
+    echo ("x =". $x);
  }
+
+elseif ($d < 0){
+    echo "<span style = \" color: gray;\">  нет решений</span>";
+}
 
 ?>
